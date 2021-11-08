@@ -54,7 +54,7 @@ if __name__ == "__main__":
     if( YEAR_RANGE[MODE] is not None ):
         frame = frame[ frame[COL_YEAR] >= YEAR_RANGE[MODE][0] ]
         frame = frame[ frame[COL_YEAR] <= YEAR_RANGE[MODE][1] ]
-    print(frame)
+
     # Fetch values
     for i in range(0, len(frame)):
         date.append( dt.datetime(
