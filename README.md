@@ -2,6 +2,11 @@
 
 Πηγή δεδομένων: [https://opendata.bankofgreece.gr/el/dataset/5](https://opendata.bankofgreece.gr/el/dataset/5)
 
+Το εργαλείο αυτό είναι ένα σενάριο στη γλώσσα Python που χρησιμοποιεί τις εξής ελεύθερες βιβλιοθήκες:
+* Pandas
+* NumPy
+* Matplotlib
+
 ## Χρήση του σεναρίου Python
 
 Γράφημα για όλα τα έτη
