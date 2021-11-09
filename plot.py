@@ -96,6 +96,9 @@ if __name__ == "__main__":
     # Convert to NumPy arrays
     date, value = np.array(date), np.array(value)
 
+    # Adjust plot size
+    pl.figure(figsize=(16, 5))
+
     # Plot
     pl.plot(date, value)
 
