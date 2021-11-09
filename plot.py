@@ -87,5 +87,12 @@ if __name__ == "__main__":
     pl.xlabel( trim_label("{}/{}".format(COL_YEAR, COL_QUAR)) )
     pl.ylabel( trim_label(COL_VAL) )
 
+    # Save
+    datestr = dt.datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
+    pl.savefig(
+        "plot-{}-{}.png".format(MODE, datestr),
+        transparent = True
+    )
+
     # Display
     pl.show()
