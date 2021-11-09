@@ -30,7 +30,7 @@ DATA_URL = "https://www.bankofgreece.gr/OpenDataSetFilesALL/DOAM/New_Index_of_Ap
 
 # Functions
 def trim_label(text):
-    return text.replace("_", " ")
+    return text.replace("_", " ").replace("Νέος δ", "Δ") # HACK
 
 if __name__ == "__main__":
     # Parse command-line arguments
