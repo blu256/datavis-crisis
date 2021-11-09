@@ -8,20 +8,24 @@ import numpy             as np
 import pandas            as pd
 import datetime          as dt
 import matplotlib.pyplot as pl
-from   sys import argv
+from   sys      import argv
+from   os.path  import isfile
 
+# "Constants"
 MODES = {
     'full':     "Display data for all years",
     'crisis':   "Data around the economic crisis period"
 }
 MODE = list(MODES.keys())[0] # pick default mode
 
-# "Constants"
 YEAR_RANGE = {
     'full':     None,
     'crisis':   (2006, 2015)
 }
 
+DATA_URL = "https://www.bankofgreece.gr/OpenDataSetFilesALL/DOAM/New_Index_of_Apartment_Prices_by_Geographical_Area_el_2021-09-09.xls"
+
+# Functions
 def trim_label(text):
     return text.replace("_", " ")
 
@@ -40,6 +44,15 @@ if __name__ == "__main__":
 
         elif a in MODES:
             MODE = a
+
+    # Check whether we have the data. If not, silently download it.
+    if not isfile("data.xls"):
+        try:
+            from urllib import request as r
+            r.urlretrieve(DATA_URL, "data.xls")
+        except Exception as e:
+            print("Αδυναμία λήψης δεδομένων: {}".format(e.msg))
+            exit(1)
 
     # Initialize arrays and parse data
     date, value = [], []
